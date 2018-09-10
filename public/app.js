@@ -723,7 +723,10 @@ app.bindForms = () => {
         }
 
         const queryStringObject = {};
-        document.querySelector('.lds-roller').style.display = 'inline-block';
+        // Roller for ordersPayment page
+        if (primaryClass === 'ordersPayment') {
+          document.querySelector('.lds-roller').style.display = 'inline-block';
+        }
         // Call the API
         app.client.request(undefined, path, method, queryStringObject, payload, (statusCode, responsePayload) => {
           // Display an error on the form if needed
